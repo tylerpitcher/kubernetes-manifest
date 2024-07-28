@@ -18,7 +18,7 @@ spec:
         app: flaskdemo
     spec:
       containers:
-      - image: tylerpitcher/test:9
+      - image: 1shubham7/node-app
         name: flaskdemo
         resources: {}
 status: {}
@@ -33,6 +33,6 @@ spec:
   type: LoadBalancer
   ports:
   - port: 80
-    targetPort: 5000
+    targetPort: 3000
   selector:
     app: flaskdemo
