@@ -20,6 +20,7 @@ spec:
       containers:
       - image: 1shubham7/node-app
         name: flaskdemo
+        imagePullPolicy: Always
         resources: {}
 status: {}
 ---
