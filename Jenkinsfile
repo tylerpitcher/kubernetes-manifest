@@ -14,7 +14,7 @@ node {
                   sh "echo ----------------------------------------------"
                   sh "cat deployment.yaml"
                   sh "git commit -am 'Updated version number'"
-                  sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${USERNAME}/kubernetes-manifest.git"
+                  sh "git push https://${USERNAME}:${PASSWORD}@github.com/${USERNAME}/kubernetes-manifest.git"
       }
     }
   }
