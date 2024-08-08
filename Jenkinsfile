@@ -11,9 +11,11 @@ node {
               withCredentials([usernamePassword(credentialsId: 'github-username-token', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                   sh "cat deployment.yaml"
                   sh "sed -i 's+tylerpitcher/test.*+tylerpitcher/test:${DOCKERTAG}+g' deployment.yaml"
+                  sh "echo ----------------------------------------------"
                   sh "cat deployment.yaml"
-                  sh "git add ."
-                  sh "git commit -m 'Change manifest: ${env.BUILD_NUMBER}'"
+                  sh "git commit -am 'Updated version number'"
+                  // sh "git add ."
+                  // sh "git commit -m 'Change manifest: ${env.BUILD_NUMBER}'"
                   sh "git push https://${USERNAME}:${PASSWORD}@github.com/${USERNAME}/kubernetes-manifest.git"
       }
     }
